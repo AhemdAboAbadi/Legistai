@@ -68,6 +68,9 @@ def login():
     )
     return jsonify({'message': 'Login successful', 'token': token, 'redirect': '/dashboard'}), 200
 
+# Signup endpoint
+@app.route('/signup', methods=['POST'])
+def signup():
     data = request.json
     username = data.get('username')
     password = data.get('password')
