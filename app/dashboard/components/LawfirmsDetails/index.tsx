@@ -1,5 +1,6 @@
 import React from "react"
 import {Star, MapPin} from "lucide-react"
+import Image from "next/image"
 
 interface LawFirmDetailsProps {
   name?: string
@@ -25,7 +26,9 @@ const LawFirmDetails: React.FC<LawFirmDetailsProps> = React.memo(
         aria-label={`Details for law firm ${name}`}>
         {/* Header with Logo and Rating */}
         <header className="flex items-center mb-4">
-          <img
+          <Image
+            width={80}
+            height={80}
             src={logoUrl}
             alt={`${name} Logo`}
             className="w-[80px] h-[80px] rounded-lg object-cover"
@@ -59,7 +62,9 @@ const LawFirmDetails: React.FC<LawFirmDetailsProps> = React.memo(
         <section className="bg-gray-100 p-4 rounded-lg">
           <h3 className="text-md font-medium mb-2">Map Location</h3>
           <div className="relative">
-            <img
+            <Image
+              width={300}
+              height={117}
               src={mapImageUrl}
               alt={`Map showing location of ${name}`}
               className="w-full h-[117px] rounded-lg object-cover"
@@ -76,5 +81,7 @@ const LawFirmDetails: React.FC<LawFirmDetailsProps> = React.memo(
     )
   }
 )
+
+LawFirmDetails.displayName = "LawFirmDetails"
 
 export default LawFirmDetails

@@ -1,3 +1,4 @@
+import Image from "next/image"
 import React from "react"
 
 interface UserProfileProps {
@@ -18,9 +19,11 @@ const UserProfile: React.FC<UserProfileProps> = React.memo(
         aria-label={`User profile for ${name}, role: ${role}`}
         role="button"
         tabIndex={0}>
-        <img
+        <Image
           src={imageUrl}
           alt={`${name}'s profile picture`}
+          width={32}
+          height={32}
           className="w-8 h-8 rounded-full mr-2"
         />
         <div className="flex flex-col">
@@ -31,5 +34,7 @@ const UserProfile: React.FC<UserProfileProps> = React.memo(
     )
   }
 )
+
+UserProfile.displayName = "UserProfile"
 
 export default UserProfile

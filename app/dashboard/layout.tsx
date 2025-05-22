@@ -1,4 +1,4 @@
-import {ProtectedRoute} from "../../frontend/service/HOC"
+import {ProtectedRoute} from "../../service/HOC"
 import Sidebar from "./components/Sidebar"
 import Header from "./components/Header"
 

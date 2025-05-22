@@ -1,11 +1,12 @@
 "use client"
 
-import {AuthRoute} from "../../frontend/service/HOC"
+import {AuthRoute} from "../../service/HOC"
 import {useState} from "react"
-import axiosInstance from "../../frontend/service/utilities/axiosInstance"
+import axiosInstance from "../../service/utilities/axiosInstance"
 import {toast} from "react-toastify"
 import {useRouter} from "next/navigation"
 import InputField from "./components/InputField"
+import Image from "next/image"
 
 interface LoginResponse {
   token: string
@@ -54,7 +55,13 @@ export default function LoginPage() {
         <div className="flex items-center justify-center min-h-screen bg-white w-1/2">
           <div className="w-full max-w-md p-8">
             <div className="flex flex-col items-center m-7">
-              <img className="w-40 h-20" src="/logo.png" alt="Logo" />
+              <Image
+                width={160}
+                height={80}
+                className="w-40 h-20"
+                src="/logo.png"
+                alt="Logo"
+              />
               <p className="text-lg m-4">Sign into your account</p>
             </div>
             <div>
