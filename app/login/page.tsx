@@ -1,8 +1,8 @@
 "use client"
 
-import {AuthRoute} from "../../service/HOC"
+import {AuthRoute} from "../../frontend/service/HOC"
 import {useState} from "react"
-import axiosInstance from "../../service/utilities/axiosInstance"
+import axiosInstance from "../../frontend/service/utilities/axiosInstance"
 import {toast} from "react-toastify"
 import {useRouter} from "next/navigation"
 import InputField from "./components/InputField"
