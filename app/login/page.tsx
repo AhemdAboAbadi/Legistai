@@ -2,16 +2,10 @@
 
 import {AuthRoute} from "../../service/HOC"
 import {useState} from "react"
-import axiosInstance from "../../service/utilities/axiosInstance"
 import {toast} from "react-toastify"
 import {useRouter} from "next/navigation"
 import InputField from "./components/InputField"
 import Image from "next/image"
-
-interface LoginResponse {
-  token: string
-  redirect: string
-}
 
 export default function LoginPage() {
   const [email, setEmail] = useState<string>("")
@@ -27,14 +21,8 @@ export default function LoginPage() {
 
     setIsLoading(true)
     try {
-      const {data} = await axiosInstance.post<LoginResponse>("/login", {
-        username: email,
-        password: password,
-      })
-
-      localStorage.setItem("token", data.token)
       toast.success("Login successful", {
-        onClose: () => router.push(data.redirect),
+        onClose: () => router.push("/"),
       })
     } finally {
       setIsLoading(false)

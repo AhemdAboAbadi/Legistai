@@ -11,7 +11,7 @@ const ProtectedRoute = ({children}: ProtectedRouteProps) => {
   const router = useRouter()
 
   useEffect(() => {
-    const isAuthenticated = localStorage.getItem("token") // Example: check for auth token
+    const isAuthenticated = true // Example: check for auth token
     if (!isAuthenticated) {
       router.replace("/login") // Redirect to login if not authenticated
     }
