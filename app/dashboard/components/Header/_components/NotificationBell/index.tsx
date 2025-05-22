@@ -15,4 +15,6 @@ const NotificationBell: React.FC = React.memo(() => {
   )
 })
 
+NotificationBell.displayName = "NotificationBell"
+
 export default NotificationBell
